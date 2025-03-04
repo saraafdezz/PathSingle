@@ -14,3 +14,6 @@ pathsingle/pathway_db/owl/biopax.zip
 .vscode/
 build/
 venv/
+# pixi environments
+.pixi
+*.egg-info

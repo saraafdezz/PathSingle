@@ -68,7 +68,7 @@ def calc_activity(adata, sparsity=20):
     gene_to_index = {gene: i for i, gene in enumerate(gene_names)}
 
     #Load and parse pathway relations.
-    pathway_relations = pd.read_csv('./data/pathway_relations.csv')
+    pathway_relations = pd.read_csv('~/TFG/PathSingle/pathsingle/data/pathway_relations.csv')
     pathway_relations['source'] = pathway_relations['source'].fillna('').astype(str).str.lower().str.split('*')
     pathway_relations['target'] = pathway_relations['target'].fillna('').astype(str).str.lower().str.split('*')
 
@@ -130,11 +130,11 @@ def calc_activity(adata, sparsity=20):
     activity_df = pd.DataFrame(mean_activity_matrix, index=adata.obs_names, columns=list(pathway_interactions.keys())).T
 
     #Save results to CSV.
-    activity_df.T.to_csv('./data/output_activity.csv')
+    activity_df.T.to_csv('~/TFG/PathSingle/pathsingle/data/output_activity.csv')
     
     # Convert the list of dictionaries to a DataFrame.
     interaction_activities = pd.DataFrame(interaction_dicts)
     # Set the sample name as the index.
     interaction_activities.set_index('sample_name', inplace=True)
     interaction_activities = interaction_activities.astype(np.float16)
-    interaction_activities.to_csv('./data/output_interaction_activity.csv')
+    interaction_activities.to_csv('~/TFG/PathSingle/pathsingle/data/output_interaction_activity.csv')

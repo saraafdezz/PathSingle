@@ -88,7 +88,7 @@ def run_pathsingle(adata):
     activity_df = pd.DataFrame(adata.X, index=adata.obs_names, columns=adata.var_names)
     activity = sc.AnnData(activity_df)
     calc_activity(activity, sparsity)
-    output_activity = pd.read_csv('./data/output_activity.csv', index_col=0)
+    output_activity = pd.read_csv('~/TFG/PathSingle/pathsingle/data/output_activity.csv', index_col=0)
 
     #Scale the data.
     scaler = Normalizer()

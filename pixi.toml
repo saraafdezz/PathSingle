@@ -1,0 +1,27 @@
+[project]
+authors = ["Sara <sara.fer.malv@gmail.com>"]
+channels = ["conda-forge"]
+name = "PathSingle"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+install_extras = "pip install -r requirements.txt"
+
+[dependencies]
+numpy = "*"
+scipy = "*"
+pandas = "*"
+scikit-learn = "*"
+scanpy = "*"
+tqdm = "*"
+omnipath = "*"
+umap-learn = "*"
+matplotlib = "*"
+seaborn = "*"
+
+[feature.pathsingle]
+
+
+[environments]
+pathsingle = ["pathsingle"]
